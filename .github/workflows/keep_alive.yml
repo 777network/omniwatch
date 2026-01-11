@@ -1,12 +1,12 @@
 name: Keep Supabase Alive
 on:
   schedule:
-    - cron: '0 12 * * *' # Körs varje dag kl 12:00
-  workflow_dispatch: # Gör att du kan starta den manuellt också
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping API
+      - name: Ping Supabase
         run: curl -i https://xhqwsudbbbimeinpuryd.supabase.co/rest/v1/raw_documents?limit=1 -H "apikey: ${{ secrets.sb_publishable_kxnlTottJWQaek6Rk2hBcQ__Jb9ab2t }}"
