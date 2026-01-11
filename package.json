@@ -1,3 +1,12 @@
-"scripts": {
-  "dev": "node index.js"
+{
+  "name": "monitorproject",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.12",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1"
+  }
 }
