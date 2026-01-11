@@ -1,12 +1,16 @@
-name: Keep Supabase Alive
+
+name: Supabase Keep Alive
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 0 * * 1,4'
   workflow_dispatch:
 
 jobs:
-  ping:
+  ping_supabase:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase
-        run: curl -i https://xhqwsudbbbimeinpuryd.supabase.co/rest/v1/raw_documents?limit=1 -H "apikey: ${{ secrets.sb_publishable_kxnlTottJWQaek6Rk2hBcQ__Jb9ab2t }}"
+      - name: Send Ping
+        run: |
+          curl -i -X GET "https://xhqwsudbbbimeinpuryd.supabase.co/rest/v1/raw_documents?limit=1 " \
+          -H "apikey: ${{ secrets.sb_publishable_kxnlTottJWQaek6Rk2hBcQ__Jb9ab2t }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
