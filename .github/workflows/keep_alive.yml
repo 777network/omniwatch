@@ -1,4 +1,3 @@
-
 name: Supabase Keep Alive
 on:
   schedule:
@@ -11,6 +10,6 @@ jobs:
     steps:
       - name: Send Ping
         run: |
-          curl -i -X GET "https://xhqwsudbbbimeinpuryd.supabase.co/rest/v1/raw_documents?limit=1 " \
-          -H "apikey: ${{ secrets.sb_publishable_kxnlTottJWQaek6Rk2hBcQ__Jb9ab2t }}" \
+          curl -i -X GET "https://xhqwsudbbbimeinpuryd.supabase.co/rest/v1/raw_documents?limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
           -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
